@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trump speech after elections</title>
+
+    <!-- Import Google Font: Roboto Condensed -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Reset default margins and styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+
+        /* Full page centered layout */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            background-image: url('s.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #333;
+        }
+
+        /* Title and subtitle styling */
+        h1 {
+            font-size: 2.5em;
+            color: #fff;
+            margin-bottom: 8px;
+            text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.4);
+            font-weight: 700;
+        }
+        h2 {
+            font-size: 1.4em;
+            color: #ddd;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            font-weight: 400;
+        }
+
+        /* Card container for speaker image, button, and Twitter link */
+        .card {
+            background-color: #fff;
+            padding: 30px;
+            width: 500px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Speaker image styling */
+        #speakerImage {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 3px solid #4a90e2;
+        }
+
+        /* Play button styling */
+        #playButton {
+            width: 100%;
+            padding: 12px;
+            font-size: 1.1em;
+            font-weight: bold;
+            background-color: #4a90e2;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-bottom: 10px;
+        }
+        #playButton:hover {
+            background-color: #357abd;
+        }
+        #playButton:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        /* Twitter link styling */
+        .twitter-link {
+            text-decoration: none;
+            color: #4a90e2;
+            font-weight: bold;
+            margin-top: 10px;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+        .twitter-link:hover {
+            color: #357abd;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Title and subtitle -->
+    <h1>Trump speech after elections</h1>
+    <h2>CA HERE - $T2024</h2>
+
+    <!-- Card with image, play button, and Twitter link -->
+    <div class="card">
+        <img id="speakerImage" src="image-removebg-preview (80).png" alt="Speaker Image">
+        <button id="playButton">Listen to the Speech</button>
+        <a href="https://twitter.com/yourprofile" class="twitter-link" target="_blank">Follow on Twitter</a>
+    </div>
+
+    <!-- Audio element for the speech -->
+    <audio id="introAudio">
+        <source src="yoo-degens-it-s-fucking-t-2.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        const playButton = document.getElementById('playButton');
+        const audio = document.getElementById('introAudio');
+
+        // Play audio once on button click and disable button
+        playButton.addEventListener('click', () => {
+            audio.play();
+            playButton.disabled = true; // Disable button after clicking
+        });
+
+        // Hide button when audio ends
+        audio.addEventListener('ended', () => {
+            playButton.style.display = 'none'; // Hide button after audio ends
+        });
+    </script>
+</body>
+</html>
